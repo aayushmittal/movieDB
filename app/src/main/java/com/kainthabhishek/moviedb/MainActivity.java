@@ -42,5 +42,9 @@ public class MainActivity extends AppCompatActivity implements SelectorFragment.
     @Override
     public void movieListItemClicked(Movie movie,ArrayList<Movie> movieList) {
         Intent i = new Intent();
+        i.putExtra("movie_list",movieList);
+        i.putExtra("movie_object",movie);
+        i.setClass(this,MovieListActivity.class);
+        startActivity(i);
     }
 }
